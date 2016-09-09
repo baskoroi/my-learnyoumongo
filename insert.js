@@ -6,11 +6,7 @@ mongo.connect(url, (err, db) => {
 
     let collection = db.collection('docs');
     let firstName = process.argv[2];
-    let lastName = process.argv[3];
-    /*collection.insertOne({ firstName, lastName }).then((result) => {
-        if (err) throw err;
-        console.log(JSON.stringify(result));
-    });*/
+    let lastName = process.argv[3]; 
     let data = { firstName, lastName };
     collection.insertOne(data).then((r) => { console.log(JSON.stringify(data)); });
 
